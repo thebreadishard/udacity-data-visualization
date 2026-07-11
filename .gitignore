@@ -1,0 +1,39 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# --- Virtual environment ---
+.venv/
+venv/
+env/
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+*.nbconvert.ipynb
+
+# --- Environment / secrets ---
+.env
+*.key
+kaggle.json
+
+# --- Large / raw source data (kept out of the repo) ---
+# The cleaned CSVs under data/ ARE tracked (they are small).
+# The 503 MB PAHdb XML and any bulky raw downloads are not.
+data/raw/
+*.xml
+*.tar
+*.tar.gz
+*.zip
+
+# --- Generated outputs ---
+# Per-molecule fact-sheet PDFs and other generated artifacts.
+outputs/
+
+# --- OS / editor cruft ---
+.DS_Store
+Thumbs.db
+.vscode/

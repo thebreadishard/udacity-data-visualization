@@ -1,0 +1,18 @@
+# Core data + rubric visualization stack
+numpy
+pandas
+matplotlib
+seaborn
+
+# Notebook / kernel / HTML export
+jupyter
+ipykernel
+nbconvert
+
+# Stand-out goal: molecule structure rendering + interactivity
+rdkit
+ipywidgets
+plotly
+
+# Spike: parse the PAHdb XML (vibrational-mode inspection)
+lxml
