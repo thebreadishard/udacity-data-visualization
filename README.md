@@ -30,11 +30,13 @@ source for the stand-out goal's structure/spectrum work.
 DataVisualization/
 ├── data/
 │   ├── clean/            # cleaned CSVs — analysis input (tracked; small)
+│   ├── processed/        # atom geometry extracted from the raw XML (tracked; small)
 │   └── raw/              # raw PAHdb XML source (git-ignored; ~480 MB)
 ├── notebooks/
-│   ├── Part_I_exploration_template.ipynb    # exploratory analysis (7 visualizations)
-│   └── Part_II_explanatory_template.ipynb   # explanatory analysis (3–5 polished plots)
-├── outputs/              # generated fact-sheet PDFs (git-ignored)
+│   ├── Part_I_exploration_template.ipynb    # exploratory analysis (7 visualizations + bonus)
+│   ├── Part_I_exploration_template.html     # exported, with figure alt text
+│   ├── Part_II_explanatory_template.ipynb   # explanatory analysis (4 polished plots, incl. 1 interactive)
+│   └── Part_II_explanatory_template.html    # exported, self-contained
 ├── requirements.txt
 ├── .python-version       # pinned Python (3.14)
 ├── LICENSE               # MIT
@@ -43,18 +45,25 @@ DataVisualization/
 
 ## Goals
 
-**Rubric (required):** Part I is a structured exploratory analysis with exactly
-seven visualizations (univariate → bivariate → multivariate) using the
-Question–Visualization–Observations framework; Part II turns the strongest
-findings into 3–5 polished, presentation-quality plots. Both notebooks are
-exported to HTML/PDF for submission.
+**Rubric (required):** Part I is a structured exploratory analysis with seven
+visualizations (univariate → bivariate → multivariate) plus a bonus structure
+render, using the Question–Visualization–Observations framework; Part II turns
+the strongest findings into four polished, presentation-quality plots — including
+one interactive Plotly chart. Both notebooks are exported to self-contained HTML
+(with descriptive figure alt text) for submission.
 
-**Stand-out goal:** A one-page A4 **PDF fact sheet per molecule** containing the
-molecule's details, a 2D structure diagram (colored atoms + bonds), and its IR
-emission stick spectrum. In the notebook (not the PDF), an interactive view lets
-you enter a molecule by id and **click a spectral line to see the responsible
-atoms vibrate**. Rubric work is built as reusable functions that also feed this
-goal.
+**Stand-out goal:** A per-molecule **fact sheet** that links structure to
+spectrum: one 2D structure diagram (RDKit, coloured atoms + bonds) alongside an
+IR emission stick spectrum for **each charge state** the molecule exists in
+(anion / neutral / cation). It is a reusable function — enter any molecule `uid`
+to render its sheet — shown inline in the notebook (Figure 4).
+
+Two further interactive ideas from the original plan — a rotatable 3D structure
+and a "click a spectral line to see the responsible atoms vibrate" view — are
+**deferred to the capstone**. They require the per-atom displacement vectors of
+each vibrational normal mode, which the PAHdb data does not contain; reproducing
+them faithfully means computing the normal modes ourselves (a quantum-chemistry
+step). See the Part II conclusions for the full reasoning.
 
 ## Setup (local)
 
